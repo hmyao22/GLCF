@@ -115,7 +115,7 @@ class DPTV(nn.Module):
         x1 = self.patch_embed1(x[0])
         x2 = self.patch_embed2(x[1])
         x3 = self.patch_embed3(x[2])
-        x = x3
+        x = x1+x2+x3
         x = x + self.pos_embed[:, 1:, :]
         N, L, D = x.shape  # batch, length, dim
 
